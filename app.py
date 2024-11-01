@@ -36,12 +36,12 @@ with col1:
     temperature = st.number_input("Temperature (°C)", value=25)
     qualifying_score = st.number_input("Qualifying Score", value=90)
     driver_avg_finish = st.number_input("Driver Average Finish Position", value=3)
-    track_condition = st.selectbox("Track Condition", ["good", "average", "poor"])
+    track_condition = st.selectbox("Track Condition", ['dry', 'wet'])
 
 with col2:
     temperature_category = st.selectbox("Temperature Category", ['medium', 'very_high', 'low', 'high'])
     constructor_avg_points = st.number_input("Constructor Average Points", value=15)
-    weather_type = st.selectbox("Weather Type", ["dry", "wet"])
+    weather_type = st.selectbox("Weather Type", ['overcast', 'cloudy', 'sunny', 'rain'])
 
 # Button to make a prediction
 if st.button("Predict Finish Position"):
