@@ -71,27 +71,6 @@ if st.button("Predict Finish Position"):
     prediction = lr_model.predict(input_data_final)
     predicted_finish_position = max(int(prediction[0]), 1)  # Ensure minimum finish position is 1
 
-    # Adjust predicted_finish_position based on additional conditions
-    # Temperature adjustments
-    if temperature_category in ['very_high', 'high']:
-        predicted_finish_position = max(predicted_finish_position - 1, 1)  # Favorable, reduce position
-    elif temperature_category == 'low':
-        predicted_finish_position += 1  # Less favorable, increase position
-
-    # Track condition adjustments
-    if track_condition == 'wet':
-        predicted_finish_position += 2  # Wet track is less favorable
-    elif track_condition == 'dry':
-        predicted_finish_position = max(predicted_finish_position - 1, 1)  # Favorable, reduce position
-
-    # Weather type adjustments
-    if weather_type == 'sunny':
-        predicted_finish_position = max(predicted_finish_position - 1, 1)  # Sunny is favorable
-    elif weather_type == 'rain':
-        predicted_finish_position += 5  # Rainy significantly impacts performance
-    elif weather_type == 'cloudy':
-        predicted_finish_position += 2  # Cloudy has moderate impact
-
     # Display the result in a styled box
     st.markdown(f'<div class="result-box">🏁 Predicted Finish Position: {predicted_finish_position}</div>', unsafe_allow_html=True)
 
