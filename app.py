@@ -99,4 +99,4 @@ if st.button("Predict Finish Position"):
 st.markdown('<br>', unsafe_allow_html=True)  # Adjust the number of <br> tags for more or less space
 
 # Credits text at the bottom
-st.markdown('<div style="color:grey; text-align:center">Yeshaswi Prakash & Jaishree Baskaran © 2024</div>', unsafe_allow_html=True)
+st.markdown('<div style="color:grey; text-align:center">Yeshaswi Prakash © 2024</div>', unsafe_allow_html=True)
